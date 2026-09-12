@@ -6,7 +6,7 @@ This is based directly on [Colemak Mod-DH Kanata template](https://github.com/Co
 
 ## How to Use
 
-1. Download [Kanata](https://github.com/jtroo/kanata).
+1. Download [Kanata](https://github.com/jtroo/kanata/releases/latest) for your operating system.
 2. Get `kanata.kbd` [from this repository](https://github.com/OpaliteArchitect/kanata-colemak-dh/blob/main/kanata.kbd) and place it in the same folder as _Kanata_.
 3. Run _Kanata_.
 
