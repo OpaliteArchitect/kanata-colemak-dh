@@ -63,7 +63,7 @@
   ext       (tap-dance 200 ($ext-tog (multi $ext-sw slck)))
   clmk      (tap-dance 200 (XX (multi $clmk-sw slck)))
   sym       $sym-tog
-  ext-tog   $ext-tog                                      ;; legacy behavior
+  ext-tog   $ext-tog                                      ;; legacy behavio
 
   ;; Common shortcuts for Extend layer
   cpy  C-c   ;; Copy
