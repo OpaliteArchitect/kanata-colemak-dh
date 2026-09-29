@@ -33,7 +33,7 @@
   tab      q    w    f    p    b    j    l    u    y    ;    [    ]    \
   @ext     a    r    s    t    g    m    n    e    i    o    '    ret
   lsft        x    c    d    v    z    k    h    ,    .    /    rsft
-  lctl     lmet lalt           spc            ralt rmet _    _
+  lctl     lmet lalt           spc            @sym rmet _    _
 )
 
 ;; Extend layer for navigation, function keys, and layer switching
@@ -42,15 +42,28 @@
   caps    pp   prev next _     mute vold volu media homepage _  _      _                   ;; 13
   _       f1   f2   f3   f4    f5   f6   f7   f8    f9   f10    f11    f12   pause         ;; 14
   lrld    esc  @mwu @bk  @fw   @cup pgup home up    end  del    C-y    ins   homepage      ;; 14
-  _       lalt @mwd lsft lctl  @cdn pgdn lft  down  rght bspc   menu   prtsc               ;; 13
-  _          C-x  C-c  mlft  C-v  C-z  mmid mrgt @clf  @crg   _      _                     ;; 12
+  @clmk   lalt @mwd lsft lctl  @cdn pgdn lft  down  rght bspc   menu   prtsc               ;; 13
+  @ac        C-x  C-c  mlft  C-v  C-z  mmid mrgt @clf  @crg   _      _                     ;; 12
   _       _    _                ret               _    _    _      _                       ;; 8
+)
+
+;; Symbols layer for programming
+(deflayer symbols
+  _        _    _    _    _    _    _    _    _    _    _    _    _
+  _        _    _    _    _    _    _    _    _    _    _    _    _    bspc
+  _        S-1  S-2  S-3  S-4  S-5  =    7    8    9    +    _    _    _
+  _        \    S-\  S-[  S-9  [    S-8  4    5    6    -    S--  _
+  _           S-7  S-]  S-0  ]    S-6  0    1    2    3    _    _
+  _        _    _              _              _    _    _    _
 )
 
 ;; Aliases for cleaner layer definitions
 (defalias
-  ;; Extend layer toggle on Caps Lock
-  ext  (layer-toggle extend)
+  ;; Extend layer toggle on Caps Lock, double tap to switch into and out of Extend
+  ext       (tap-dance 200 ($ext-tog (multi $ext-sw slck)))
+  clmk      (tap-dance 200 (XX (multi $clmk-sw slck)))
+  sym       $sym-tog
+  ext-tog   $ext-tog                                      ;; legacy behavior
 
   ;; Common shortcuts for Extend layer
   cpy  C-c   ;; Copy
@@ -70,9 +83,16 @@
   crg  (movemouse-accel-right $m-interval $m-accel $m-min $m-max) ;; cursor right
   smul (setmouse 10000 10000)       ;; set mouse upper left
   smbr (setmouse 50000 50000)       ;; set mouse bottom right
+
+  ac (macro-repeat mltp 50)
 )
 
 (defvar
+  ext-sw    (layer-switch extend)
+  ext-tog   (layer-toggle extend)
+  clmk-sw   (layer-switch colemak-dh)
+  sym-tog   (layer-toggle symbols)
+
   m-interval 15
   m-accel 1000
   m-min 1
