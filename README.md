@@ -1,6 +1,6 @@
 # Colemak-DH .kbd file for Kanata
 
-[Colemak-DH](https://colemakmods.github.io/mod-dh/) ANSI layout with Extend layer .kbd configuration file for [Kanata](https://github.com/jtroo/kanata). Inspired by [DreymaR's EPKL](https://github.com/DreymaR/BigBagKbdTrixPKL). 
+[Colemak-DH](https://colemakmods.github.io/mod-dh/) ANSI layout with Extend and Symbols layer .kbd configuration file for [Kanata](https://github.com/jtroo/kanata). Inspired by [DreymaR's EPKL](https://github.com/DreymaR/BigBagKbdTrixPKL). 
 
 This is based directly on [Colemak Mod-DH Kanata template](https://github.com/ColemakMods/mod-dh/blob/master/kanata/colemak-dh-ansi.kbd).
 
